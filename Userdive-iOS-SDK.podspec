@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.homepage     = "http://userdive.com"
   s.license      = { :type => "Commercial", :file => "LICENSE" }
   s.author       = { "UNCOVER TRUTH Inc." => "sales@uncovertruth.jp" }
-  s.platform     = :ios
   s.platform     = :ios, "4.3"
 
   s.source       = { :git => "https://github.com/key/Userdive.git", :tag => "1.0.7" }
