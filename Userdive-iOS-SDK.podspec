@@ -1,24 +1,18 @@
 Pod::Spec.new do |s|
-  s.name         = "Userdive-iOS-SDK"
-  s.version      = "1.0.7"
-  s.summary      = "USERDIVE for Apps"
+  s.name             = "Userdive-iOS-SDK"
+  s.version          = "1.0.7"
+  s.summary          = "USERDIVE for Apps"
+  s.homepage         = "http://userdive.com"
+  s.license          = { :type => 'Commercial', :text => 'See you later' }
+  s.author           = { "UNCOVER TRUTH Inc." => "support@uncovertruth.jp" }
 
-  s.description  = <<-DESC
-                   A longer description of Userdive in Markdown format.
+  s.platform     = :ios, '6.0'
+  s.requires_arc = true
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+  s.source           = { :git => "https://github.com/key/Userdive-iOS-SDK.git", :tag => "1.0.7" }
 
-  s.homepage     = "http://userdive.com"
-  s.license      = { :type => "Commercial", :file => "LICENSE" }
-  # s.author       = { "UNCOVER TRUTH Inc." => "sales@uncovertruth.jp" }
-  s.author       = "UNCOVER TRUTH Inc."
-  s.platform     = :ios, "4.3"
-
-  s.source       = { :git => "https://github.com/key/Userdive-iOS-SDK.git", :tag => "1.0.7" }
+  s.frameworks = 'Foundation'
 
   s.preserve_paths      = "Userdive.framework"
   s.public_header_files = "Userdive.framework/**/*.h"
