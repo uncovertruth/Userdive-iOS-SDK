@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "Userdive-iOS-SDK"
   s.version      = "1.0.7"
-  s.summary      = "A short description of Userdive."
+  s.summary      = "USERDIVE for Apps"
 
   s.description  = <<-DESC
                    A longer description of Userdive in Markdown format.
@@ -14,10 +14,11 @@ Pod::Spec.new do |s|
 
   s.homepage     = "http://userdive.com"
   s.license      = { :type => "Commercial", :file => "LICENSE" }
-  s.author       = { "UNCOVER TRUTH Inc." => "sales@uncovertruth.jp" }
+  # s.author       = { "UNCOVER TRUTH Inc." => "sales@uncovertruth.jp" }
+  s.author       = "UNCOVER TRUTH Inc."
   s.platform     = :ios, "4.3"
 
-  s.source       = { :git => "https://github.com/key/Userdive.git", :tag => "1.0.7" }
+  s.source       = { :git => "https://github.com/key/Userdive-iOS-SDK.git", :tag => "1.0.7" }
 
   s.preserve_paths      = "Userdive.framework"
   s.public_header_files = "Userdive.framework/**/*.h"
