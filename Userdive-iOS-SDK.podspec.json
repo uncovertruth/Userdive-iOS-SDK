@@ -12,7 +12,7 @@
     "UNCOVER TRUTH Inc.": "sales@uncovertruth.jp"
   },
   "documentation_url": "http://apps.userdive.com/sdk/ja/manual.html",
-  "platform": {
+  "platforms": {
     "ios": "6.0"
   },
   "requires_arc": true,
@@ -23,7 +23,7 @@
     "git": "git@github.com:key/Userdive-iOS-SDK.git",
     "tag": "1.0.7"
   },
-  "framework": "Foundation",
+  "frameworks": "Foundation",
   "preserve_paths": ["Userdive.framework"],
   "public_header_files": ["Userdive.framework/**/*.h"],
   "vendored_frameworks": ["Userdive.framework"]
