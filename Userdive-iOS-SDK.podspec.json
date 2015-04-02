@@ -20,11 +20,9 @@
     "OTHER_LDFLAGS": "-ObjC"
   },
   "source": {
-    "git": "git@github.com:key/Userdive-iOS-SDK.git",
-    "tag": "1.0.7"
+    "http": "https://bitbucket.org/uncovertruth/userdive-ios-sdk/get/1.0.7.zip",
+    "flatten": true
   },
-  "frameworks": "Foundation",
-  "preserve_paths": ["Userdive.framework"],
-  "public_header_files": ["Userdive.framework/**/*.h"],
-  "vendored_frameworks": ["Userdive.framework"]
+  "source_files": "Userdive/Userdive.h",
+  "vendored_libraries": "Userdive/libUserdive.a"
 }
