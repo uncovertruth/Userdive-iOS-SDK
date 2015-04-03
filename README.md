@@ -3,7 +3,7 @@
 Write Podfile to your project.
 
 ```
-pod 'Userdive-iOS-SDK'
+pod 'Userdive-iOS-SDK', '~> 1.0'
 ```
 
 Install pods.
