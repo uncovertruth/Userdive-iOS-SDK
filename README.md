@@ -1,3 +1,24 @@
+# Installation
+
+Write Podfile to your project.
+
+```
+pod 'Userdive-iOS-SDK'
+```
+
+Install pods.
+
+```
+pod install
+```
+
+And open workspace.
+
+```
+open YourProject.xcworkspace
+```
+
+# About UNCOVER TRUTH
 UNCOVER TRUTH Inc. is the Japan No.1 UI/UX anayltics consulting company provide
 a analytics tool called "USERDIVE for Apps".
 
