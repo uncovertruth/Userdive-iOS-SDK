@@ -47,16 +47,16 @@ Those logs will be uploaded when the app enters to background.
 
 Check your Team ID at [USERDIVE For Apps website](https://detector.userdive.com/en/apps/).
 
-![team id](https://drive.google.com/file/d/0B7UxsiswNc5_cHdTUGpOX0IyU2M/view?usp=sharing)
+![team id](http://drive.google.com/uc?export=view&id=0B7UxsiswNc5_cHdTUGpOX0IyU2M)
 
 
 ## Check your Bundle ID
 
 Check Bundle ID on Xcode and USERDIVE.
 
-![bundle id settings on USERDIVE](https://drive.google.com/open?id=0B7UxsiswNc5_WWVGaFdSMHNFMGs&authuser=0)
+![bundle id settings on USERDIVE](http://drive.google.com/uc?export=view&id=0B7UxsiswNc5_WWVGaFdSMHNFMGs)
 
-![bundle id on Xcode](https://drive.google.com/open?id=0B7UxsiswNc5_Tno4VHA4Snh3alE&authuser=0)
+![bundle id on Xcode](http://drive.google.com/uc?export=view&id=0B7UxsiswNc5_Tno4VHA4Snh3alE)
 
 
 ## Implementation
