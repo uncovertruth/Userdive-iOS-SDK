@@ -4,7 +4,7 @@
 
 fixed issue:
 
-* Fixed bug when starting app in landscape mode.
+* Fixed crash bug when starting app in landscape mode.
 
 new feature / improvement:
 
