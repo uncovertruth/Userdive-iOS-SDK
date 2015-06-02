@@ -29,7 +29,7 @@ SDK has 2 operation modes below:
 
 ## Developer mode
 
-**WARNING: DON'T USE THIS FOR PRODUCTION APPS**
+**WARNING: DON'T USE THIS MODE FOR PRODUCTION APPS**
 
 Userdive tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap base image in developer mode.
 Confirmation dialog shows after every transitions. To tap *send* button, upload to userdive screen image immediately.
@@ -61,8 +61,25 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or `[Userdive startDevelope
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [Userdive startTrackingMode:<your team id>];  // <-- HERE
-  return YES;
+	[Userdive setLogEnabled:YES];
+	[Userdive startTrackingMode:<your team id>];  // <-- HERE
+
+	// custom parameter
+	[Userdive setCustomField1:@"25"];    // user age
+	[Userdive setCustomField2:@"male"];  // gender
+
+	return YES;
+}
+```
+
+Set custom screen name in some ViewController.
+
+```objective-c
+- (void)viewDidLoad 
+{
+	[super viewDidLoad];
+
+	[Userdive setScreenName:@"custom scree name"];
 }
 ```
 
