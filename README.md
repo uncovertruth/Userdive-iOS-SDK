@@ -29,16 +29,16 @@ SDK has 2 operation modes below:
 
 ## Developer mode
 
-**WARNING: DON'T USE THIS MODE FOR PRODUCTION APPS**
+**WARNING: DON'T USE THIS MODE FOR APPS IN PRODUCTION**
 
-Userdive tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap base image in developer mode.
-Confirmation dialog shows after every transitions. To tap *send* button, upload to userdive screen image immediately.
+In developer mode, USERDIVE tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap base image in developer mode.
+Confirmation dialog shows after every transition. Tap `Send` button to upload screen image on USERDIVE.
 
 
 ## Tracking mode
 
-Userdive tracks user's gesture, transisions in tracking mode.
-Those logs will be uploaded when app entering to background.
+USERDIVE tracks user's gesture and transitions in tracking mode.
+Those logs will be uploaded when the app enters to background.
 
 
 # Integrate with your app
@@ -50,9 +50,9 @@ Check your Team ID at [USERDIVE For Apps website](https://detector.userdive.com/
 
 ## Implementation
 
-Import Userdive header.
+Import Userdive iOS SDK header.
 
-```
+```objective-c
 #import "Userdive.h"
 ```
 
@@ -92,15 +92,15 @@ Set custom screen name in some ViewController.
 
 # About UNCOVER TRUTH
 
-UNCOVER TRUTH Inc. is the Japan No.1 UI/UX anayltics consulting company provide
-a analytics tool called "USERDIVE for Apps".
+UNCOVER TRUTH Inc. is the Japan No.1 UI/UX anayltics and consulting company providing
+an analytics tool called "USERDIVE for Apps".
 
-In spite of launched service within a year, more 200 companies utilize the
-service and improve their UI/UX better. Based on our achievement and experiences
+In spite of launched service within a year, more 200 companies utilize this service
+to improve their UI/UX. Based on our achievements and experiences
 in Japan, we want to share our experiences to improve all companies who have
 problems with their UI/UX. Also, we want to make user-friendly services more and
-more in the world. USERDIVE for Apps is the best UI/UX analytics tool, which be
-able to confirm every single users' all of page transition page staying time
+more in the world. USERDIVE for Apps is the best UI/UX analytics tool, which enables 
+to confirm every single users' all of the page transition page staying time
 read content by HEAT MAPS, FUNNEL ANALYTICS and PLAY BACK. Based on UX analytics
-can achieve more effective improvement which is better than the pervious
+can achieve more effective improvement that is better than the pervious
 experience of designers or developers.
