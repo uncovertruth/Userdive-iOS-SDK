@@ -20,7 +20,7 @@
     "OTHER_LDFLAGS": "-ObjC"
   },
   "source": {
-    "http": "https://bitbucket.org/uncovertruth/userdive-ios-sdk/get/1.0.7.zip",
+    "http": "https://github.com/uncovertruth/Userdive-iOS-SDK/archive/1.0.7.zip",
     "flatten": true
   },
   "source_files": "Userdive/Userdive.h",
