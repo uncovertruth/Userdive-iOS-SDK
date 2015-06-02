@@ -79,7 +79,7 @@ Set custom screen name in some ViewController.
 {
 	[super viewDidLoad];
 
-	[Userdive setScreenName:@"custom scree name"];
+	[Userdive setScreenName:@"custom screen name"];  // custom screen name
 }
 ```
 
