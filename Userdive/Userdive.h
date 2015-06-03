@@ -36,6 +36,13 @@
 +(void)startDeveloperMode:(NSInteger)teamId;
 
 /**
+ * Output log message for development if set this to TRUE (default is FALSE).
+ *
+ * @param flag BOOL
+ */
++(void)setLogEnabled:(BOOL)flag;
+
+/**
  *  Pause tracking. To resume, call 'resume'.
  */
 +(void)pause;
