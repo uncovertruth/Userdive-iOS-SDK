@@ -1,3 +1,22 @@
+# Compatibility
+
+* iOS 7.0 or later (If you run application on iOS 6 or previous iOS version, SDK does not affect the behavior of application)
+* Supported architectures below:
+  * i386 & x86_64 (iOS simulator)
+  * armv7
+  * armv7s
+  * arm64
+* Supported devices below:
+  * iPhone 4
+  * iPhone 4s
+  * iPhone 5
+  * iPhone 5c
+  * iPhone 5s
+  * iPhone 6
+  * iPhone 6+
+* **iPad and iPod family** are not supported
+
+
 # Installation
 
 Write Podfile to your project.
@@ -116,8 +135,16 @@ To use location heatmap, call method below.
 
 # Trouble shooting
 
-* Check app logs
-* Check your team id and app bundle identifier
+## SDK does not record any logs
+
+First, check your team id and app identifier.
+Both values must match on detector.userdive.com.
+
+
+## Show tap heatmaps without screen image
+
+You must upload screen capture with developer mode.
+Need to add `[Userdive startDeveloperMode:<your team id>]` into `AppDelegate.m` .
 
 
 # About UNCOVER TRUTH
