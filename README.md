@@ -14,7 +14,7 @@
   * iPhone 5s
   * iPhone 6
   * iPhone 6+
-* **iPad and iPod family** are not supported
+* **iPad and iPod family are not supported**
 
 
 # Installation
