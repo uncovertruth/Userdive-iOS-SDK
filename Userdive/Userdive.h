@@ -37,6 +37,7 @@
 
 /**
  * Output log message for development if set this to TRUE (default is FALSE).
+ * This method should be called before the startTrackingMode method.
  *
  * @param flag BOOL
  */
@@ -81,5 +82,33 @@
  *  This method should be called from the webviewDidFinishLoad: delegate method.
  */
 +(void)webViewDidFinishLoad:(UIWebView*)webView;
+
+/**
+ *  Handle NSURLReqeust with `userdive:` scheme.
+ *  You can use Userdive iOS SDK from JavaScript space via this method.
+ *  This method should be called from the `webView:shouldStartLoadWithRequest:navigationType:` delegate method.
+ *
+ *  Supported URLs:
+ *
+ *  - userdive:///setCustomField1?value=<specified value>
+ *  - userdive:///setCustomField2?value=<specified value>
+ *  - userdive:///setCustomField3?value=<specified value>
+ *  - userdive:///setCustomField4?value=<specified value>
+ *  - userdive:///setCustomField5?value=<specified value>
+ *  - userdive:///setScreenName?value=<specified value>
+ *  - userdive:///setLocation?longitude=<longitude>&latitude=<latitude>&horizontalAccuracy=<horizontalAccuracy>&verticalAccuracy=<verticalAccuracy>
+ *
+ *  @param request NSURLRequest object from `UIWebViewDelegate:webView:shouldStartLoadWithRequest:navigationType:`
+ *  @return TRUE=userdive handled your request. FALSE=userdive NOT handled your request.
+ */
++(BOOL)handleUserdiveURLRequest:(NSURLRequest *)request;
+
+/**
+ * Set user location.
+ */
++(void)setLatitude:(double)latitude
+         longitude:(double)longitude
+horizontalAccuracy:(float)horizontalAccuracy
+  verticalAccuracy:(float)verticalAccuracy;
 
 @end

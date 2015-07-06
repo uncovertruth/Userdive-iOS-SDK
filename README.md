@@ -94,6 +94,25 @@ Set custom screen name in some ViewController.
 }
 ```
 
+To use location heatmap, call method below.
+
+```objective-c
+/**
+ * Note:
+ * Userdive iOS SDK does not link the CoreLocation framework.
+ * Obtains the location information in the application,
+ * you must pass the latitude and longitude to Userdive.
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = locations[0];
+
+    [Userdive setLatitude:location.coordinate.latitude
+                longitude:location.coordinate.longitude
+       horizontalAccuracy:location.horizontalAccuracy
+         verticalAccuracy:location.verticalAccuracy];
+}
+```
 
 # Trouble shooting
 
