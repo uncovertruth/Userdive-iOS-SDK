@@ -1,3 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Compatibility](#compatibility)
+- [Installation](#installation)
+- [Understanding Userdive iOS SDK](#understanding-userdive-ios-sdk)
+  - [Developer mode](#developer-mode)
+  - [Tracking mode](#tracking-mode)
+- [Integrate with your app](#integrate-with-your-app)
+  - [Check your Team ID](#check-your-team-id)
+  - [Check your Bundle ID](#check-your-bundle-id)
+  - [Implementation](#implementation)
+- [Trouble shooting](#trouble-shooting)
+  - [SDK does not record any logs](#sdk-does-not-record-any-logs)
+  - [Show tap heatmaps without screen image](#show-tap-heatmaps-without-screen-image)
+- [Other documents](#other-documents)
+- [About UNCOVER TRUTH](#about-uncover-truth)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Compatibility
 
 * iOS 7.0 or later (If you run application on iOS 6 or previous iOS version, SDK does not affect the behavior of application)
@@ -153,6 +174,12 @@ Both values must match on detector.userdive.com.
 
 You must upload screen capture with developer mode.
 Need to add `[Userdive startDeveloperMode:<your team id>]` into `AppDelegate.m` .
+
+
+# Other documents
+
+* [CHANGES](./CHANGES.md)
+* [FAQ (In Japanese)](./FAQ.ja.md)
 
 
 # About UNCOVER TRUTH
