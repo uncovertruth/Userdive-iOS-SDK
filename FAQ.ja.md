@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [対応機種、対応OSを教えて下さい](#%E5%AF%BE%E5%BF%9C%E6%A9%9F%E7%A8%AE%E3%80%81%E5%AF%BE%E5%BF%9Cos%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E4%B8%8B%E3%81%95%E3%81%84)
+- [Swiftで利用できますか](#swift%E3%81%A7%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B)
 - [依存するフレームワークを教えて下さい](#%E4%BE%9D%E5%AD%98%E3%81%99%E3%82%8B%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E4%B8%8B%E3%81%95%E3%81%84)
 - [イベントログの送信タイミングを教えて下さい](#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%AD%E3%82%B0%E3%81%AE%E9%80%81%E4%BF%A1%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E4%B8%8B%E3%81%95%E3%81%84)
 - [セッションライフサイクルについて教えて下さい](#%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%95%99%E3%81%88%E3%81%A6%E4%B8%8B%E3%81%95%E3%81%84)
@@ -23,6 +24,13 @@
 # 対応機種、対応OSを教えて下さい
 
 README.mdの `Compatibility` をご参照ください。
+
+
+# Swiftで利用できますか
+
+Userdive iOS SDKはObjective-Cライブラリとして配布しています。
+Swift言語で使用するにはブリッジ・ヘッダを記述する必要があります。
+ブリッジ・ヘッダの詳細はAppleの公式サイトを御覧ください（[Swift and Objective-C in the Same Project](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html)）。
 
 
 # 依存するフレームワークを教えて下さい

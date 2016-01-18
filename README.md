@@ -8,9 +8,18 @@
   - [Developer mode](#developer-mode)
   - [Tracking mode](#tracking-mode)
 - [Integrate with your app](#integrate-with-your-app)
-  - [Check your Team ID](#check-your-team-id)
-  - [Check your Bundle ID](#check-your-bundle-id)
-  - [Implementation](#implementation)
+  - [Preparing integration](#preparing-integration)
+    - [Check your Team ID](#check-your-team-id)
+    - [Check your Bundle ID](#check-your-bundle-id)
+  - [Capturing image](#capturing-image)
+    - [Capture images when it detects view transitions](#capture-images-when-it-detects-view-transitions)
+    - [Capture images manually](#capture-images-manually)
+  - [Tracking gestures](#tracking-gestures)
+    - [Automatically tracking view transitions](#automatically-tracking-view-transitions)
+    - [Manually tracking view transitions](#manually-tracking-view-transitions)
+  - [Using custom variables](#using-custom-variables)
+  - [Using custom screen name](#using-custom-screen-name)
+  - [Using location heatmap](#using-location-heatmap)
 - [Trouble shooting](#trouble-shooting)
   - [SDK does not record any logs](#sdk-does-not-record-any-logs)
   - [Show tap heatmaps without screen image](#show-tap-heatmaps-without-screen-image)
@@ -83,14 +92,16 @@ Those logs will be uploaded when the app enters to background.
 
 # Integrate with your app
 
-## Check your Team ID
+## Preparing integration
+
+### Check your Team ID
 
 Check your Team ID at [USERDIVE For Apps website](https://detector.userdive.com/en/apps/).
 
 ![team id](http://drive.google.com/uc?export=view&id=0B7UxsiswNc5_cHdTUGpOX0IyU2M)
 
 
-## Check your Bundle ID
+### Check your Bundle ID
 
 Check Bundle ID on Xcode and USERDIVE.
 
@@ -98,8 +109,83 @@ Check Bundle ID on Xcode and USERDIVE.
 
 ![bundle id on Xcode](http://drive.google.com/uc?export=view&id=0B7UxsiswNc5_Tno4VHA4Snh3alE)
 
+## Capturing image
 
-## Implementation
+Before using userdive heatmap, capture the images of app view.
+For capturing image, start Userdive iOS SDK with developer mode.
+
+
+### Capture images when it detects view transitions
+
+Userdive iOS SDK can automatically tracking user gesture, and view transitions,
+if you use standard iOS UI components (UINavigationController, UITabBarController etc...).
+
+Import Userdive iOS SDK header.
+
+```objective-c
+#import "Userdive.h"
+```
+
+Insert `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into 
+`AppDeletegate:application:didFinishLaunchingWithOptions:` with your Team ID.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  [Userdive setLogEnabled:YES];
+
+  // START DEVELOPER MODE
+  [Userdive startDeveloperMode:<your team id>];
+
+  return YES;
+}
+```
+
+
+### Capture images manually
+
+You need to capture the images of app view manually
+if you use custom view or 3rd party framework like a [Unity](https://unity3d.com/jp).
+
+Import Userdive iOS SDK header.
+
+```objective-c
+#import "Userdive.h"
+```
+
+Insert `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into 
+`AppDeletegate:application:didFinishLaunchingWithOptions:` with your Team ID.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  [Userdive setLogEnabled:YES];
+
+  // START DEVELOPER MODE WITHOUT TRACKERS
+  [Userdive startDeveloperMode:<your team id> trackers:nil];
+
+  return YES;
+}
+```
+
+When you want to capture view is displayed, call the capture method.
+
+Call `updateScreen` to prepare for capture the view.
+When you call `updateScreen` again, upload the captured image (You need to call `updateScreen` twice).
+
+```objective-c
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+  [Userdive updateScreen];
+}
+```
+
+
+## Tracking gestures
+
+### Automatically tracking view transitions
 
 Import Userdive iOS SDK header.
 
@@ -117,24 +203,48 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or
 	[Userdive setLogEnabled:YES];
 	[Userdive startTrackingMode:<your team id>];  // <-- HERE
 
-	// custom parameter
-	[Userdive setCustomField1:@"25"];    // user age
-	[Userdive setCustomField2:@"male"];  // gender
-
 	return YES;
 }
 ```
+
+### Manually tracking view transitions
+
+
+## Using custom variables
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  [Userdive setLogEnabled:YES];
+  [Userdive startTrackingMode:<your team id>];  // <-- HERE
+
+  // custom parameter
+  [Userdive setCustomField1:@"25"];    // user age
+  [Userdive setCustomField2:@"male"];  // gender
+
+  return YES;
+}
+```
+
+
+## Using custom screen name
 
 Set custom screen name in some ViewController.
 
 ```objective-c
 - (void)viewDidLoad 
 {
-	[super viewDidLoad];
+  [super viewDidLoad];
 
-	[Userdive setScreenName:@"custom screen name"];  // custom screen name
+  [Userdive setScreenName:@"custom screen name"];  // custom screen name
 }
 ```
+
+
+## Using location heatmap
+
+Userdive iOS SDK WILL NOT get user location automatically.
+Set values from `CLLocation` object from delegate method of `CLLocationManagerDelegate` in your app.
 
 To use location heatmap, call method below.
 
@@ -155,11 +265,6 @@ To use location heatmap, call method below.
          verticalAccuracy:location.verticalAccuracy];
 }
 ```
-
-**NOTE**
-
-Userdive iOS SDK will not get user location automatically.
-Set values from `CLLocation` object from delegate method of `CLLocationManagerDelegate` in your app.
 
 
 # Trouble shooting
