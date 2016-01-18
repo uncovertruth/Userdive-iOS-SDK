@@ -16,6 +16,13 @@
 
 # How to use iOS SDK for Unity
 
+## Download Unity package
+
+Download unity package from our official repository.
+
+* [USERDIVE iOS SDK for Unity](https://github.com/uncovertruth/userdive-ios-sdk-for-unity/archive/v1.0.0.zip)
+
+
 ## Import
 
 Import a unitypackage.
