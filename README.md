@@ -50,7 +50,7 @@ SDK has 2 operation modes below:
 
 **WARNING: DON'T USE THIS MODE FOR APPS IN PRODUCTION**
 
-In developer mode, USERDIVE tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap base image in developer mode.
+In developer mode, USERDIVE tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap background image.
 Confirmation dialog shows after every transition. Tap `Send` button to upload screen image on USERDIVE.
 
 
@@ -86,7 +86,9 @@ Import Userdive iOS SDK header.
 #import "Userdive.h"
 ```
 
-Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into `AppDeletegate:application:didFinishLaunchingWithOptions:`.
+Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or
+`[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into 
+`AppDeletegate:application:didFinishLaunchingWithOptions:` with your Team ID.
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -132,6 +134,12 @@ To use location heatmap, call method below.
          verticalAccuracy:location.verticalAccuracy];
 }
 ```
+
+**NOTE**
+
+Userdive iOS SDK will not get user location automatically.
+Set values from `CLLocation` object from delegate method of `CLLocationManagerDelegate` in your app.
+
 
 # Trouble shooting
 
