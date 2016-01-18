@@ -4,7 +4,7 @@
 
 - [Compatibility](#compatibility)
 - [Installation](#installation)
-- [Understanding Userdive iOS SDK](#understanding-userdive-ios-sdk)
+- [Understanding Userdive iOS SDK operation mode](#understanding-userdive-ios-sdk-operation-mode)
   - [Developer mode](#developer-mode)
   - [Tracking mode](#tracking-mode)
 - [Integrate with your app](#integrate-with-your-app)
@@ -17,7 +17,7 @@
   - [Tracking gestures](#tracking-gestures)
     - [Automatically tracking view transitions](#automatically-tracking-view-transitions)
     - [Manually tracking view transitions](#manually-tracking-view-transitions)
-  - [Using custom variables](#using-custom-variables)
+  - [Using custom parameters](#using-custom-parameters)
   - [Using custom screen name](#using-custom-screen-name)
   - [Using location heatmap](#using-location-heatmap)
 - [Trouble shooting](#trouble-shooting)
@@ -68,7 +68,7 @@ open YourProject.xcworkspace
 ```
 
 
-# Understanding Userdive iOS SDK
+# Understanding Userdive iOS SDK operation mode
 
 SDK has 2 operation modes below:
 
@@ -112,15 +112,15 @@ Check Bundle ID on Xcode and USERDIVE.
 ## Capturing image
 
 Before using userdive heatmap, capture the images of app view.
-For capturing image, start Userdive iOS SDK with developer mode.
+For capturing image, start USERDIVE iOS SDK with developer mode.
 
 
 ### Capture images when it detects view transitions
 
-Userdive iOS SDK can automatically tracking user gesture, and view transitions,
+USERDIVE iOS SDK can automatically tracking user gesture, and view transitions,
 if you use standard iOS UI components (UINavigationController, UITabBarController etc...).
 
-Import Userdive iOS SDK header.
+Import USERDIVE iOS SDK header.
 
 ```objective-c
 #import "Userdive.h"
@@ -147,7 +147,7 @@ Insert `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into
 You need to capture the images of app view manually
 if you use custom view or 3rd party framework like a [Unity](https://unity3d.com/jp).
 
-Import Userdive iOS SDK header.
+Import USERDIVE iOS SDK header.
 
 ```objective-c
 #import "Userdive.h"
@@ -185,16 +185,18 @@ When you call `updateScreen` again, upload the captured image (You need to call 
 
 ## Tracking gestures
 
-### Automatically tracking view transitions
+### Automatically detect view transitions
 
-Import Userdive iOS SDK header.
+USERDIVE iOS SDK can track user gesture and view transitions automatically.
+To start tracking, call `startTrackingMode:` when initializing SDK.
+
+Import USERDIVE iOS SDK header.
 
 ```objective-c
 #import "Userdive.h"
 ```
 
-Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or
-`[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into 
+Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` 
 `AppDeletegate:application:didFinishLaunchingWithOptions:` with your Team ID.
 
 ```objective-c
@@ -210,15 +212,23 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]` or
 ### Manually tracking view transitions
 
 
-## Using custom variables
+
+
+
+## Using custom parameters
+
+You can set custom parameter for filterting on analytics view.
+For instance, customer age, gender, living area ... etc.
+
+Userdive can be accept custom parameters up to 5.
+To set the parameters, enter any string to the method.
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [Userdive setLogEnabled:YES];
-  [Userdive startTrackingMode:<your team id>];  // <-- HERE
+  // snip
 
-  // custom parameter
+  // custom parameter (up to 5)
   [Userdive setCustomField1:@"25"];    // user age
   [Userdive setCustomField2:@"male"];  // gender
 
@@ -243,7 +253,7 @@ Set custom screen name in some ViewController.
 
 ## Using location heatmap
 
-Userdive iOS SDK WILL NOT get user location automatically.
+USERDIVE iOS SDK WILL NOT get user location automatically.
 Set values from `CLLocation` object from delegate method of `CLLocationManagerDelegate` in your app.
 
 To use location heatmap, call method below.
@@ -251,9 +261,9 @@ To use location heatmap, call method below.
 ```objective-c
 /**
  * Note:
- * Userdive iOS SDK does not link the CoreLocation framework.
+ * USERDIVE iOS SDK does not link the CoreLocation framework.
  * Obtains the location information in the application,
- * you must pass the latitude and longitude to Userdive.
+ * you must pass the latitude and longitude to USERDIVE.
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
