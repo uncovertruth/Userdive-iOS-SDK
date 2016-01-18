@@ -1,3 +1,30 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Installation](#installation)
+- [Understanding Userdive iOS SDK operation mode](#understanding-userdive-ios-sdk-operation-mode)
+  - [Developer mode](#developer-mode)
+  - [Tracking mode](#tracking-mode)
+- [Integrate with your app](#integrate-with-your-app)
+  - [Preparing integration](#preparing-integration)
+    - [Check your Team ID](#check-your-team-id)
+    - [Check your Bundle ID](#check-your-bundle-id)
+  - [Capturing image](#capturing-image)
+    - [Capture images when it detects view transitions](#capture-images-when-it-detects-view-transitions)
+    - [Capture images manually](#capture-images-manually)
+  - [Tracking gestures](#tracking-gestures)
+    - [Automatically detect view transitions](#automatically-detect-view-transitions)
+    - [Manually view transitions](#manually-view-transitions)
+  - [Using custom parameters](#using-custom-parameters)
+  - [Using custom screen name](#using-custom-screen-name)
+  - [Using location heatmap](#using-location-heatmap)
+- [Trouble shooting](#trouble-shooting)
+  - [SDK does not record any logs](#sdk-does-not-record-any-logs)
+  - [Show tap heatmaps without screen image](#show-tap-heatmaps-without-screen-image)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 # Installation
