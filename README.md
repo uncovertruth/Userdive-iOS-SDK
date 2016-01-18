@@ -179,6 +179,7 @@ When you call `updateScreen` again, upload the captured image (You need to call 
   [super viewDidAppear:animated];
 
   [Userdive updateScreen];
+  [Userdive setScreenName:@"screen A"];
 }
 ```
 
@@ -209,10 +210,45 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]`
 }
 ```
 
-### Manually tracking view transitions
+### Manually view transitions
 
+In situations that have adopted a special view configuration
+(non-standard view placement and third-party libraries, etc.), 
+you might think that you want to switch the view tracking manually.
 
+Import USERDIVE iOS SDK header.
 
+```objective-c
+#import "Userdive.h"
+```
+
+Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID> trackers:nil]` into 
+`AppDeletegate:application:didFinishLaunchingWithOptions:` with your Team ID.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  [Userdive setLogEnabled:YES];
+
+  // START TRACKING MODE WITHOUT TRACKERS
+  [Userdive startTrackingMode:<your team id> trackers:nil];
+
+  return YES;
+}
+```
+
+Call `updateScreen` to change tracking view instance.
+And call `setScreenName` to set name of view.
+
+```objective-c
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+
+  [Userdive updateScreen];
+  [Userdive setScreenName:@"screen A"];
+}
+```
 
 
 ## Using custom parameters
