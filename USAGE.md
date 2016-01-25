@@ -58,7 +58,7 @@ SDK has 2 operation modes below:
 
 ## Developer mode
 
-**WARNING: DON'T USE THIS MODE FOR APPS IN PRODUCTION**
+**WARNING: DO NOT USE THIS MODE FOR APPS IN PRODUCTION**
 
 In developer mode, USERDIVE tracks some native views (UIViewController, UIActionSheet, UIAlertView etc.) for heatmap background image.
 Confirmation dialog shows after every transition. Tap `Send` button to upload screen image on USERDIVE.
@@ -97,7 +97,7 @@ For capturing image, start USERDIVE iOS SDK with developer mode.
 
 ### Capture images when it detects view transitions
 
-USERDIVE iOS SDK can automatically tracking user gesture, and view transitions,
+USERDIVE iOS SDK can automatically track user gesture, and view transitions,
 if you use standard iOS UI components (UINavigationController, UITabBarController etc...).
 
 Import USERDIVE iOS SDK header.
@@ -234,7 +234,7 @@ And call `setScreenName` to set name of view.
 ## Using custom parameters
 
 You can set custom parameter for filterting on analytics view.
-For instance, customer age, gender, living area ... etc.
+For instance, customer's age, gender, living area ... etc.
 
 Userdive can be accept custom parameters up to 5.
 To set the parameters, enter any string to the method.
