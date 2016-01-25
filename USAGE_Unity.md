@@ -4,6 +4,7 @@
 
 - [Supported versions](#supported-versions)
 - [How to use iOS SDK for Unity](#how-to-use-ios-sdk-for-unity)
+  - [Download Unity package](#download-unity-package)
   - [Import](#import)
   - [Usage](#usage)
 
