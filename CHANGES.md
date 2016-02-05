@@ -1,6 +1,14 @@
-# CHANGES
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-## 1.1.0
+- [1.1.0](#110)
+- [1.0.8](#108)
+- [1.0.7](#107)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# 1.1.0
 
 new feature / improvement:
 
@@ -10,7 +18,7 @@ new feature / improvement:
 * Added a method for location heatmap. For more information check readme or header file.
 
 
-## 1.0.8
+# 1.0.8
 
 fixed issue:
 
@@ -24,6 +32,6 @@ new feature / improvement:
 * Displays the success or failure status after the capture upload.
 
 
-## 1.0.7
+# 1.0.7
 
 * first cocoapods release
