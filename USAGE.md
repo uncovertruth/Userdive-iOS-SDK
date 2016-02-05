@@ -50,7 +50,7 @@ open YourProject.xcworkspace
 
 # Understanding Userdive iOS SDK operation mode
 
-SDK has 2 operation modes below:
+SDK has 2 operation modes, which are the following:
 
 * Developer mode
 * Tracking mode
@@ -91,14 +91,15 @@ Check Bundle ID on Xcode and USERDIVE.
 
 ## Capturing image
 
-Before using userdive heatmap, capture the images of app view.
-For capturing image, start USERDIVE iOS SDK with developer mode.
+Before using USERDIVE heatmap, capture the screenshot.
+To capture the screenshot, start USERDIVE iOS SDK with developer mode
 
 
-### Capture images when it detects view transitions
+### Capture screenshot when it detects screen transitions
 
-USERDIVE iOS SDK can automatically track user gesture, and view transitions,
-if you use standard iOS UI components (UINavigationController, UITabBarController etc...).
+USERDIVE iOS SDK can automatically track user gesture, and screen 
+transitions, if you use standard iOS UI components (UINavigationController, 
+UITabBarController etc...).
 
 Import USERDIVE iOS SDK header.
 
@@ -122,9 +123,9 @@ Insert `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into
 ```
 
 
-### Capture images manually
+### Capture screenshots manually
 
-You need to capture the images of app view manually
+You need to capture the screenshot manually.
 if you use custom view or 3rd party framework like a [Unity](https://unity3d.com/jp).
 
 Import USERDIVE iOS SDK header.
@@ -148,9 +149,9 @@ Insert `[Userdive startDeveloperMode:<YOUR_TEAM_ID>]` into
 }
 ```
 
-When you want to capture view is displayed, call the capture method.
+When the screenshot you want to capture is displayed, call the capture method.
 
-Call `updateScreen` to prepare for capture the view.
+Call `updateScreen` to prepare for capture the screen.
 When you call `updateScreen` again, upload the captured image (You need to call `updateScreen` twice).
 
 ```objective-c
@@ -166,7 +167,7 @@ When you call `updateScreen` again, upload the captured image (You need to call 
 
 ## Tracking gestures
 
-### Automatically detect view transitions
+### Automatically detect screen transitions
 
 USERDIVE iOS SDK can track user gesture and view transitions automatically.
 To start tracking, call `startTrackingMode:` when initializing SDK.
@@ -192,9 +193,9 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID>]`
 
 ### Manually view transitions
 
-In situations that have adopted a special view configuration
-(non-standard view placement and third-party libraries, etc.), 
-you might think that you want to switch the view tracking manually.
+In the case of an adopted, special view configuration (nonstandard 
+view placement and third-party libraries, etc.), you may want to 
+consider switching to manual screen transitions
 
 Import USERDIVE iOS SDK header.
 
@@ -218,7 +219,7 @@ Insert `[Userdive startTrackingMode:<YOUR_TEAM_ID> trackers:nil]` into
 ```
 
 Call `updateScreen` to change tracking view instance.
-And call `setScreenName` to set name of view.
+And call `setScreenName` to set name of screen.
 
 ```objective-c
 - (void)viewDidAppear:(BOOL)animated
@@ -236,7 +237,7 @@ And call `setScreenName` to set name of view.
 You can set custom parameter for filterting on analytics view.
 For instance, customer's age, gender, living area ... etc.
 
-Userdive can be accept custom parameters up to 5.
+Up to 5 parameters can be set for USERDIVE.
 To set the parameters, enter any string to the method.
 
 ```objective-c
@@ -269,7 +270,7 @@ Set custom screen name in some ViewController.
 
 ## Using location heatmap
 
-USERDIVE iOS SDK WILL NOT get user location automatically.
+USERDIVE iOS SDK DOES NOT get user location automatically.
 Set values from `CLLocation` object from delegate method of `CLLocationManagerDelegate` in your app.
 
 To use location heatmap, call method below.
