@@ -20,8 +20,11 @@
  *  A new session will start when the app is returned from background.
  *
  *  @param teamId Your Userdive Team ID
+ *  @param trackers Enable Tracker inside Array
  */
 +(void)startTrackingMode:(NSInteger)teamId;
++(void)startTrackingMode:(NSInteger)teamId
+                trackers:(NSMutableArray*)trackers;
 
 /**
  *  Starts developer mode. This method can be called only once.
@@ -32,9 +35,11 @@
  *    Please do not call this API for release build.
  *
  *  @param teamId Your Userdive Team ID
+ *  @param trackers Enable Tracker inside Array
  */
 +(void)startDeveloperMode:(NSInteger)teamId;
-
++(void)startDeveloperMode:(NSInteger)teamId
+                trackers:(NSMutableArray*)trackers;
 /**
  * Output log message for development if set this to TRUE (default is FALSE).
  * This method should be called before the startTrackingMode method.
@@ -42,6 +47,27 @@
  * @param flag BOOL
  */
 +(void)setLogEnabled:(BOOL)flag;
+
+/**
+ * Set tracker enabled.
+ * if startTracking actived start this tracker.
+ * @param tracker Tracker
+ */
++(void)setEnabledTracker:(NSInteger)tracker;
+
+/**
+ * Set tracker disabled.
+ * if startTraking not actived stop this tracker.
+ * @param tracker Tracker
+ */
++(void)setDisabledTracker:(NSInteger)tracker;
+
+/**
+ * Check tracker enabled.
+ * @param tracker Tracker
+ * @return TRUE=tracker enabled
+ */
++(BOOL)isEnabledTracker:(NSInteger)tracker;
 
 /**
  *  Pause tracking. To resume, call 'resume'.
@@ -75,6 +101,11 @@
  *  @param screenName The name of the screen.
  */
 +(void)setScreenName:(NSString*)screenName;
+
+/**
+ * Update current screen.
+ */
++(void)updateScreen;
 
 /**
  *  Enable tracking page transitions in webview.

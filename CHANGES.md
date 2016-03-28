@@ -1,5 +1,14 @@
 # CHANGES
 
+## 1.2.0
+
+New feature / improvements
+
+- Added ability to capture at the specified timing
+- Added some bridge for using SDK from JavaScript
+- Support BITCODE (finally!)
+
+
 ## 1.1.0
 
 new feature / improvement:
