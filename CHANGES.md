@@ -1,5 +1,13 @@
 # CHANGES
 
+## 1.2.1
+
+Fixed issues:
+
+- Fixed bug that consume session when starting app in background
+- Supress warnings in compiling
+- Reduced library size
+
 ## 1.2.0
 
 New feature / improvements
