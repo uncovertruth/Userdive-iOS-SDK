@@ -1,5 +1,19 @@
 # CHANGES
 
+## 1.2.3
+
+New feature / improvements
+
+- Supports WKWebView
+- Supports installation using Carthage
+- Enhanced network error handling 
+
+## 1.2.2
+
+Fixed issues:
+
+- Fixed documentation URL (CocoaPods users only)
+
 ## 1.2.1
 
 Fixed issues:
