@@ -1,5 +1,9 @@
 # CHANGES
 
+## 1.2.4
+
+- Bug fixes
+
 ## 1.2.3
 
 New feature / improvements
