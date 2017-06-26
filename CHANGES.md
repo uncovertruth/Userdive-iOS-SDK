@@ -1,5 +1,9 @@
 # CHANGES
 
+## 1.2.5
+
+- Fixed screen capture for webview
+
 ## 1.2.4
 
 - Bug fixes
@@ -10,7 +14,7 @@ New feature / improvements
 
 - Supports WKWebView
 - Supports installation using Carthage
-- Enhanced network error handling 
+- Enhanced network error handling
 
 ## 1.2.2
 
