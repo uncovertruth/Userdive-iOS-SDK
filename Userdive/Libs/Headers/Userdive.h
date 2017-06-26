@@ -116,8 +116,7 @@
  */
 +(void)webViewDidFinishLoad:(UIWebView*)webView;
 
-+(void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler;
-
++(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;
 /**
  *  Handle NSURLReqeust with `userdive:` scheme.
  *  You can use Userdive iOS SDK from JavaScript space via this method.
