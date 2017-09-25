@@ -1,5 +1,9 @@
 # CHANGES
 
+## 1.2.6
+
+- Fixed screen capture size for webview
+
 ## 1.2.5
 
 - Fixed screen capture for webview
